@@ -5,8 +5,11 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
+require('./libs/mongooseConnect'); //conexion a MongoDB con Mongoose
+require('./models/Anuncios'); //modelo de Anuncio
+require('./models/Usuarios'); //modelo de usuario
 var index = require('./routes/index');
-var users = require('./routes/users');
+
 
 var app = express();
 
@@ -23,7 +26,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
-app.use('/users', users);
+
+app.use('/apiv1/install',require('./routes/apiv1/install')); 
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
