@@ -19,6 +19,7 @@ usuariosSchema.statics.findUserbyMail = function(email, callback){
     
 };
 
+
 //Creamos el modelo
 
 var Usuarios = mongoose.model('Usuarios',usuariosSchema);

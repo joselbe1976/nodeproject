@@ -1,0 +1,48 @@
+{
+    "es":
+    [ {
+        "id" : "ERROR_LOGIN",
+        "nombre": "Usuario y/o Clave incorrecto"
+        
+    }, {
+        "id" : "ERROR_CONECTION",
+        "nombre": "Error en la conexión"
+    },
+    {
+        "id" : "CONECT_OK",
+        "nombre": "Login OK"
+    }
+    ,
+    {
+        "id" : "USER_EXIST",
+        "nombre": "El usuario ya existe en el sistema. No se da de alta"
+    },
+    {
+        "id" : "USER_SAVE_OK",
+        "nombre": "Usuario grabado correctamente"
+    }
+     ],
+
+    "en":
+    [ {
+        "id" : "ERROR_LOGIN",
+        "nombre": "Incorrect user/Password"
+        
+    }, {
+        "id" : "ERROR_CONECTION",
+        "nombre": "Error in connection"
+    },
+    {
+        "id" : "CONECT_OK",
+        "nombre": "Login OK"
+    },
+    {
+        "id" : "USER_EXIST",
+        "nombre": "The user exist in the system. No hire user."
+    },
+    {
+        "id" : "USER_SAVE_OK",
+        "nombre": "User save success"
+    }
+     ]
+}

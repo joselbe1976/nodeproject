@@ -10,5 +10,16 @@
         "precio": 50.00,
         "foto": "iphone.png",
         "tags": [ "lifestyle", "mobile"]
+    } ],
+
+    "usuarios":
+    [ {
+        "nombre": "Jose Luis Bustos",
+        "email": "joselbe1976@hotmail.com",
+        "clave": "123456"
+    }, {
+        "nombre": "Jose Luis Equilibrha",
+        "email": "jlbustos@equilibrha.es",
+        "clave": "123456"
     } ]
 }
