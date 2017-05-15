@@ -5,8 +5,22 @@ const router = express.Router();
 const Anuncio = require('../../models/Anuncios');
 const security = require('../../libs/security');
 
+/*lista de Tags existentes */
+router.get('/tags',security,(req,res,next)=>{
+     Anuncio.listTags((err,data)=>{
+            if (err){
+                next(err);
+                return;
+            }
+            res.json({success: true, data: data});
+     });  
+
+});
+
+
+
 /* Lista de anuncios */
-router.get('/', function(req, res, next) {
+router.get('/', security, function(req, res, next) {
 
   //pillamos los argumentos de filtro y contruimos el filtro 
   const filter = {}; //filters

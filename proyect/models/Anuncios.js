@@ -11,8 +11,13 @@ const anunciosSchema = mongoose.Schema({
     tags: [String]
 });
 
+//creamos los indices
+anunciosSchema.index({ precio: 1, type: -1 }); //indice
+anunciosSchema.index({ nombre: 1, type: -1 }); //indice
+anunciosSchema.index({ venta: 1, type: -1 }); //indice
+anunciosSchema.index({ tags: 1, type: -1 }); //indice
 
-//Lista de anuncios, sin filtros ni nada
+//Lista de anuncios
 anunciosSchema.statics.list = function(filter,start, limit, sort,callback){
     //asignamos filtro
     const query = Anuncios.find(filter);
@@ -26,6 +31,12 @@ anunciosSchema.statics.list = function(filter,start, limit, sort,callback){
     query.exec(callback);
     
 };
+
+/* Lista de Tags */
+anunciosSchema.statics.listTags = function(callback){
+    Anuncios.distinct('tags',callback); //distinct tags
+};
+
 
 
 //Creamos el modelo
