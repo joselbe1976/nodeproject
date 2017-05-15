@@ -5,8 +5,8 @@ Keepcoding Proyecto Nodejs Jose Luis Bustos
 <h3>Pasos para Arranque proyecto</h3>
 
 1. Arrancar mongoDB. Si la base de datos MongoDb no está en localhost, entonces habrá que entrar al fichero ./libs/mongooseConnect.js y cambiar la URL del servidor MongoGB
-2. Ejecutar dentro de la carpeta ./proyecto el comando "npm run dev".
-3. Si se quiere instalar los datos por defecto, se ejecutará el GET: "http://localhost:3000/apiv1/install", si todo va bien la respuesta sera 
+2. Ejecutar dentro de la carpeta ./proyecto "cd proyectO" y  el comando "npm run dev".
+3. Se quiere instalar los datos por defecto, se ejecutará el GET: "http://localhost:3000/apiv1/install", la cual no he implementado seguridad, si todo va bien la respuesta sera :
 
             {
             "success": true,
@@ -66,7 +66,7 @@ Y ejemplo de respuesta JSON:
 
         http://localhost:3000/apiv1/anuncios?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiam9zZWxiZTE5NzZAaG90bWFpbC5jb20iLCJpYXQiOjE0OTQ4MzQ3ODUsImV4cCI6MTQ5NDgzNTY4NX0.u6foJGDI6rAQj-HErzYExSN_2HenirkIBEuRh7mN-Bo
 
-Se le pueden pasar los siguientes filtros:
+Se le pueden pasar los siguientes filtros por Body o Query :
 
     - venta. Se le puede pasar con true/false para poder filtrar anuncios de venta o de compra
     - nombre. Para filtrar por el nombre del articulo
@@ -112,7 +112,7 @@ Se le pueden pasar los siguientes filtros:
             ]
             }
 
-Se le pueden pasar los siguientes parámetros para controlar el listado, paginación y su ordenación:
+Se le pueden pasar los siguientes parámetros por Body o Query para controlar el listado, paginación y su ordenación:
 
     - start. Indicar desde que posición quiere empezar. Ejemplo: ?start=0
     - limit. Para indicar el número de anuncios que queremos leer. Ejemplo: ?limit=10
@@ -122,3 +122,8 @@ Se le pueden pasar los siguientes parámetros para controlar el listado, paginac
 
         http://localhost:3000/apiv1/anuncios?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiam9zZWxiZTE5NzZAaG90bWFpbC5jb20iLCJpYXQiOjE0OTQ4MzQ3ODUsImV4cCI6MTQ5NDgzNTY4NX0.u6foJGDI6rAQj-HErzYExSN_2HenirkIBEuRh7mN-Bo&sort=nombre&start=0&limit=3
         
+
+<b>Acceso a fotos</b>. El API devuelve en los anuncios, como se accede a la ruta de la imagen. Un ejemplo de URL que tendrá que construir la Web o Dispositivo es:
+
+        http://localhost:3000/images/iphone4.jpg
+
