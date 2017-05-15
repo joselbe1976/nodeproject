@@ -6,12 +6,17 @@ Keepcoding Proyecto Nodejs Jose Luis Bustos
 
 1. Arrancar mongoDB. Si la base de datos MongoDb no está en localhost, entonces habrá que entrar al fichero ./libs/mongooseConnect.js y cambiar la URL del servidor MongoGB
 2. Ejecutar dentro de la carpeta ./proyecto el comando "npm run dev".
-3. Si se quiere instalar los datos por defecto, se ejecutará el GET: "http://localhost:3000/apiv1/install", sitodo va bien la respuesta sera success:true
+3. Si se quiere instalar los datos por defecto, se ejecutará el GET: "http://localhost:3000/apiv1/install", si todo va bien la respuesta sera 
+
+            {
+            "success": true,
+            "resultado": "Generados los datos OK"
+            }
 
 <h3>Ejecutar funcionalidad del API</h3>
 
 
-<b>Login al sistema</b>. Enviar un POST a la url: http://localhost:3000/apiv1/login, pasandole por Body o Query los parametros "user, password , languaje", siendo languaje el idioma con los valores:
+<b>Login al sistema</b>. Enviar un POST a la url: http://localhost:3000/apiv1/login, pasandole por Body o Query los parámetros "user, password , languaje", siendo languaje el idioma con los valores:
 
     - es => Español (por defecto)
     - en => Ingles
@@ -56,3 +61,64 @@ Y ejemplo de respuesta JSON:
         ]
         }
 
+
+<b>Lista de Anuncios</b>. Esta funcionalidad nos permite hacer una solicitud GET con una url como esta:
+
+        http://localhost:3000/apiv1/anuncios?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiam9zZWxiZTE5NzZAaG90bWFpbC5jb20iLCJpYXQiOjE0OTQ4MzQ3ODUsImV4cCI6MTQ5NDgzNTY4NX0.u6foJGDI6rAQj-HErzYExSN_2HenirkIBEuRh7mN-Bo
+
+Se le pueden pasar los siguientes filtros:
+
+    - venta. Se le puede pasar con true/false para poder filtrar anuncios de venta o de compra
+    - nombre. Para filtrar por el nombre del articulo
+    - tag. Para filtrar por un tag concreto
+    - precio. Permite filtros por precio de la siguiente manera
+            - Filtro por precio concreto: ?precio=50
+            - Filtro por precio mayor igual que: ?precio=50-
+            - Filtro por precio menor igual que: ?precio=-50
+            - Filtro por rango de precios: ?precio=50-300
+
+    Ejemplo de URLS :
+
+        http://localhost:3000/apiv1/anuncios?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiam9zZWxiZTE5NzZAaG90bWFpbC5jb20iLCJpYXQiOjE0OTQ4MzQ3ODUsImV4cCI6MTQ5NDgzNTY4NX0.u6foJGDI6rAQj-HErzYExSN_2HenirkIBEuRh7mN-Bo&precio=10-50
+
+
+            {
+            "success": true,
+            "data": [
+                {
+                "_id": "59195de32052fb19de9b0e4a",
+                "nombre": "iPhone 4",
+                "venta": true,
+                "precio": 10,
+                "foto": "/images/iphone.png",
+                "__v": 0,
+                "tags": [
+                    "lifestyle",
+                    "mobile"
+                ]
+                },
+                {
+                "_id": "59195de32052fb19de9b0e49",
+                "nombre": "iPhone 3GS",
+                "venta": false,
+                "precio": 50,
+                "foto": "/images/iphone.png",
+                "__v": 0,
+                "tags": [
+                    "lifestyle",
+                    "mobile"
+                ]
+                }
+            ]
+            }
+
+Se le pueden pasar los siguientes parámetros para controlar el listado, paginación y su ordenación:
+
+    - start. Indicar desde que posición quiere empezar. Ejemplo: ?start=0
+    - limit. Para indicar el número de anuncios que queremos leer. Ejemplo: ?limit=10
+    - sort . Para ordenar por un camp. ejemplo ?sort=nombre
+
+    Ejemplo de URL:
+
+        http://localhost:3000/apiv1/anuncios?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiam9zZWxiZTE5NzZAaG90bWFpbC5jb20iLCJpYXQiOjE0OTQ4MzQ3ODUsImV4cCI6MTQ5NDgzNTY4NX0.u6foJGDI6rAQj-HErzYExSN_2HenirkIBEuRh7mN-Bo&sort=nombre&start=0&limit=3
+        
