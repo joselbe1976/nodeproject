@@ -9,12 +9,14 @@ Pasos para Arranque proyecto:
 3. Si se quiere instalar los datos por defecto, se ejecutará el GET: "http://localhost:3000/apiv1/install", sitodo va bien la respuesta sera success:true
 
 4. Login al sistema. Enviar un POST a la url: http://localhost:3000/apiv1/login, pasandole por Body o Query los parametros "user, password , languaje", siendo languaje el idioma con los valores:
+
     - es => Español (por defecto)
     - en => Ingles
 
 Una vez logado el sistema emitirá un "token" json que habrá que usar en el resto de peticiones por query o body: 
 
 Ejemplo respuesta:
+
         {
             "success": true,
             "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkIUzI1NiIsInR5cCI6IkIUzI1NiIsInR5cCI6IkpXVCJY",

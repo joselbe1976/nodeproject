@@ -13,9 +13,15 @@ const anunciosSchema = mongoose.Schema({
 
 
 //Lista de anuncios, sin filtros ni nada
-anunciosSchema.statics.list = function(callback){
-    const query = Anuncios.find({});
-    
+anunciosSchema.statics.list = function(filter,start, limit, sort,callback){
+    //asignamos filtro
+    const query = Anuncios.find(filter);
+
+    //opciones de la consulta para paginacion y ordenacion
+    query.limit(limit);
+    query.skip(start);
+    query.sort(sort);
+
     //ejecutamos y llamamos el callback 
     query.exec(callback);
     

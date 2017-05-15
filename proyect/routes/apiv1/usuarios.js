@@ -9,6 +9,7 @@ const security = require('../../libs/security'); //cargamos la seguridad por Tok
 const translate = require('../../i18n/translate.js'); //modulo de traducciones
 
 
+
 /* Creación de un usuario con seguridad por Token*/
 router.post('/', security, function(req, res, next) {
 
