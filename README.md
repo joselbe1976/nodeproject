@@ -1,17 +1,28 @@
 # Keepcoding Proyecto Nodejs Jose Luis Bustos
 Keepcoding Proyecto Nodejs Jose Luis Bustos
 
+<h3>Arrancar la base de datos de MongoDB</h3>
+Si la base de datos MongoDb no está en localhost, entonces habrá que entrar al fichero ./libs/mongooseConnect.js y cambiar la URL del servidor MongoGB
 
-<h3>Pasos para Arranque proyecto</h3>
 
-1. Arrancar mongoDB. Si la base de datos MongoDb no está en localhost, entonces habrá que entrar al fichero ./libs/mongooseConnect.js y cambiar la URL del servidor MongoGB
-2. Ejecutar dentro de la carpeta ./proyecto "cd proyectO" y  el comando "npm run dev".
-3. Se quiere instalar los datos por defecto, se ejecutará el GET: "http://localhost:3000/apiv1/install", la cual no he implementado seguridad, si todo va bien la respuesta sera :
+<h3>Instalación inicial de la Base de datos</h3>
+Hay que seguir los siguientes pasos:
+    1. Desde consola , entrar a la carpeta ./proyecto con el comando "cd proyecto"
+    2. Una vez dentro ejecutar el comando "npm run install"
+    3. Una vez ejecutado, apareceran los mensajes siguientes
 
-            {
-            "success": true,
-            "resultado": "Generados los datos OK"
-            }
+        conectado a MongoDB
+        Eliminados los anuncios...
+        Eliminados los usuarios...
+        Generados 4  anuncios correctamente
+        Generados 2  usuarios correctamente
+        Fin del proceso de generación
+
+
+<h3>Arranque Servidor del proyecto</h3>
+
+1. Ejecutar dentro de la carpeta ./proyecto mediante comando en terminal "cd proyecto" y  ejecutar el comando "npm run dev".
+
 
 <h3>Ejecutar funcionalidad del API</h3>
 
@@ -21,11 +32,11 @@ Keepcoding Proyecto Nodejs Jose Luis Bustos
     - es => Español (por defecto)
     - en => Ingles
 
-Una vez logado el sistema emitirá un "token" json que habrá que usar en el resto de peticiones por query o body: 
+Una vez logado el sistema emitirá un "token" json que habrá que usar en el resto de peticiones por query o body desde la web o dispositivo que consuma este API.
 
-Usuario de ejemplo:
-    user: joselbe1976@hotmail.com
-    password: 123456
+    Usuario de ejemplo:
+        user: joselbe1976@hotmail.com
+        password: 123456
 
 
 Ejemplo respuesta de login:

@@ -1,23 +1,25 @@
 var express = require('express');
 
-var router = express.Router();
-const Anuncio = require('../../models/Anuncios');
-const Usuario = require('../../models/Usuarios');
-const Install = require('../../libs/install_db');
+
+require('../libs/mongooseConnect');
+const Anuncio = require('../models/Anuncios');
+const Usuario = require('../models/Usuarios');
+const Install = require('./install_db');
 
 const bcrypt = require('bcrypt')
 
 //Instalacion
-router.get('/', function(req, res, next) {
+
     //Lectura asincrona del fichero de instalacion en Json
    Install.installDB((err, data)=>{
 
         //Eliminamos
         Anuncio.remove().exec();
+        console.log('Eliminados los anuncios...');
         Usuario.remove().exec();
+        console.log('Eliminados los usuarios...');
 
-
-        //Creamos usuarios y anuncios
+        //Creamos  anuncios
 
         for(var idx in data) {
             var items = data[idx];
@@ -35,6 +37,8 @@ router.get('/', function(req, res, next) {
                         }
                     });
                 }
+
+                console.log('Generados', items.length, ' anuncios correctamente');
     
             }
 
@@ -54,16 +58,18 @@ router.get('/', function(req, res, next) {
                         }
                     });
                 }
+
+                console.log('Generados', items.length, ' usuarios correctamente');
+    
     
             }
 
             
         }
-        
-        res.json({success:true , resultado: 'Generados los datos OK'});
-
+        //mensaje fin instalacion
+        console.log('Fin del proceso de generación');
     });
 
-});
 
-module.exports = router;
+
+

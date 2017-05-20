@@ -27,7 +27,7 @@ function readFileJson(CallBack){
 
  
     //Creamos el nombre del fichero completo esta en la misma ruta Path
-    const fichero = path.join('./','libs','anuncios.json');
+    const fichero = path.join('./','scriptsstart','anuncios.json');
  
 
     // Leemos contenido en Json del fichero del paquete
