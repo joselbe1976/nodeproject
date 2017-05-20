@@ -7,10 +7,11 @@ Si la base de datos MongoDb no está en localhost, entonces habrá que entrar al
 
 <h3>Instalación inicial de la Base de datos</h3>
 Hay que seguir los siguientes pasos:
+
     1. Desde consola , entrar a la carpeta ./proyecto con el comando "cd proyecto"
 
     2. Una vez dentro ejecutar el comando "npm run install"
-    
+
     3. Una vez ejecutado, apareceran los mensajes siguientes
 
         conectado a MongoDB
