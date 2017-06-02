@@ -1,23 +1,28 @@
-# Keepcoding Modulo Devops
-Instrucciones para probar el despliegue
+<hr>
+# Keepcoding Modulo Devops Junio 2017
+<hr>
+<br>
 
-La URL de la Web desplegada es:
+Instrucciones para probar el despliegue Devops del proyecto que realizamos en el modulo del master (NodeJS).<br>
 
-http://devopweb.jlbedevelop.es
+La URL de la Web desplegada con SSL es:
+<br>
+https://devopweb.jlbedevelop.es
 
 
-Para probar el backend desplegado esta es la URL:
-
+Para probar el backend desplegado esta es la URL (sin SSL) :
+<br>
 http://backend.jlbedevelop.es
 
 Para probar un estatico se puede lanzar la URL:
-
+<br>
 http://backend.jlbedevelop.es/images/bici.jpg
 
-
-<hr><hr>
-# Keepcoding Proyecto Nodejs Jose Luis Bustos
-Keepcoding Proyecto Nodejs Jose Luis Bustos
+<br>
+<hr>
+# Keepcoding Módulo NodeJS Mayo 2017
+<hr>
+<br>
 
 <h3>Arrancar la base de datos de MongoDB</h3>
 Si la base de datos MongoDb no está en localhost, entonces habrá que entrar al fichero ./libs/mongooseConnect.js y cambiar la URL del servidor MongoGB
