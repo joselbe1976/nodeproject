@@ -1,3 +1,21 @@
+# Keepcoding Modulo Devops
+Instrucciones para probar el despliegue
+
+La URL de la Web desplegada es:
+
+http://devopweb.jlbedevelop.es
+
+
+Para probar el backend desplegado esta es la URL:
+
+http://backend.jlbedevelop.es
+
+Para probar un estatico se puede lanzar la URL:
+
+http://backend.jlbedevelop.es/images/bici.jpg
+
+
+<hr><hr>
 # Keepcoding Proyecto Nodejs Jose Luis Bustos
 Keepcoding Proyecto Nodejs Jose Luis Bustos
 
