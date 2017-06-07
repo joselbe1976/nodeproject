@@ -10,7 +10,7 @@ La URL de la Web desplegada con SSL es:
 https://www.jlbedevelop.es
 
 
-Para probar el backend desplegado esta es la URL (sin SSL) :
+Para probar el backend desplegado esta es la URL:
 <br>
 https://backend.jlbedevelop.es
 
@@ -20,7 +20,7 @@ https://backend.jlbedevelop.es/images/bici.jpg
 
 <br>
 
-Nota: las URL de abajo que se vayan a usar deben usar la url con htts pues estan securizadas con SSL.
+Nota: las URL de abajo que se vayan a usar deben usar la url con https pues estan securizadas con SSL.
 
 
 <hr>
