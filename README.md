@@ -5,22 +5,20 @@
 
 Instrucciones para probar el despliegue Devops del proyecto que realizamos en el modulo del master (NodeJS).<br>
 
-La URL de la Web desplegada con SSL es:
+La URL de la Web desplegada es:
 <br>
-https://www.jlbedevelop.es
+http://www.jlbedevelop.es
 
 
 Para probar el backend desplegado esta es la URL:
 <br>
-https://backend.jlbedevelop.es
+http://backend.jlbedevelop.es
 
 Para probar un estatico se puede lanzar la URL:
 <br>
-https://backend.jlbedevelop.es/images/bici.jpg
+http://backend.jlbedevelop.es/images/bici.jpg
 
-<br>
 
-Nota: las URL de abajo que se vayan a usar deben usar la url con https pues estan securizadas con SSL.
 
 
 <hr>
